@@ -6,14 +6,19 @@
 #define BDOTRADER_COMMANDCONSOLE_H
 
 
+#include "NodeTracker.h"
+
 class CommandConsole {
 public:
     CommandConsole();
 
 private:
-    static void displayMainMenu();
-    static void navigateMainMenu(std::string userInput);
-    static int parseInput(std::string userInput);
+    NodeTracker nodeTracker;
+
+    void displayMainMenu();
+    void navigateMainMenu(const std::string& userInput);
+    void addNodeMenu();
+    static int parseInput(const std::string& userInput);
 };
 
 
